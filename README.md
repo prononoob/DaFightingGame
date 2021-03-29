@@ -6,7 +6,7 @@ Turn Based Fighting Game
 
 The most basic code was implemented
 
-- [ ] randomize attacking/receiving damage
+- [x] randomize attacking/receiving damage
 - [x] add working npcTurn (still work in progress but at least there is something)
 
 # v1.1
