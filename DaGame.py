@@ -1,4 +1,4 @@
-import random
+#import random
 
 
 pHealth=[1,1,1,1,1,1,1,1,1,1]
@@ -6,8 +6,6 @@ nHealth=[1,1,1,1,1,1,1,1,1,1]
 
 pMana=[1,1,1,1,1]
 nMana=[1,1,1,1,1]
-
-whoseTurn=[0]
 
 #dmg = random.randint
 #heal = random.randint
