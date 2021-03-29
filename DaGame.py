@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 
 pHealth=[]
@@ -29,6 +30,7 @@ def playerTurn():
         print('Skipping turn... ')
 
 def npcTurn():
+    sleep(.5)
     print('\n NPC\'s TURN\n')
     whoseTurn.pop(0)
     whoseTurn.append(0)
@@ -42,9 +44,9 @@ def checkScore():
         print('Player won! ')
         exit()
     else:
-        print('Player\'s Health: ',len(pHealth))
-        print('NPC\'s Health: ',len(nHealth))
-        print('Next turn! ')
+        print('[','#'*len(pHealth),' '*(20-len(pHealth)),']',' '*10,'[','#'*len(nHealth),' '*(20-len(nHealth)),']',' '*10,)
+        print('Player\'s Health: ',len(pHealth),' '*20,'NPC\'s Health: ',len(nHealth))
+        print('\nNext turn! ')
     
 def attack():
     n=random.randint(1,3)
