@@ -1,8 +1,12 @@
 import random
 
 
-pHealth=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-nHealth=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+pHealth=[]
+nHealth=[]
+
+for i in range(1,20):
+    pHealth.append(1)
+    nHealth.append(1)
 
 pMana=[1,1,1,1,1]
 nMana=[1,1,1,1,1]
