@@ -7,7 +7,7 @@ Turn Based Fighting Game
 The most basic code was implemented
 
 - [ ] randomize attacking/receiving damage
-- [ ] add working npcTurn
+- [x] add working npcTurn (still work in progress but at least there is something)
 - [ ] add spells
 - [ ] add healing mechanic
 - [ ] improve Health and Mana system
