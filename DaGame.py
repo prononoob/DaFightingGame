@@ -10,9 +10,12 @@ nMana=[1,1,1,1,1]
 #dmg = random.randint
 #heal = random.randint
 
+whoseTurn=[0]
 
 def playerTurn():
     z=input('Attack or use spell? (a/s): ')
+    whoseTurn.pop(0)
+    whoseTurn.append(1)
     if z.lower()=='a':
         attack()
     elif z.lower()=='s':
@@ -21,7 +24,9 @@ def playerTurn():
         print('Skipping turn... ')
 
 def npcTurn():
-    print('npcTurn... (not working yet)')
+    whoseTurn.pop(0)
+    whoseTurn.append(0)
+    attack()
 
 def checkScore():
     if len(pHealth)==0:
@@ -36,8 +41,12 @@ def checkScore():
         print('Next turn! ')
     
 def attack():
-   nHealth.pop(0)
-   print('Attacked enemy! ')
+    if 1 in whoseTurn:
+        nHealth.pop(0)
+        print('Attacked enemy! \n')
+    elif 0 in whoseTurn:
+        pHealth.pop(0)
+        print('Attacked player! \n')
 
 def spell():
     nHealth.pop(0)
