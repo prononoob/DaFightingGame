@@ -1,8 +1,8 @@
-#import random
+import random
 
 
-pHealth=[1,1,1,1,1,1,1,1,1,1]
-nHealth=[1,1,1,1,1,1,1,1,1,1]
+pHealth=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+nHealth=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
 pMana=[1,1,1,1,1]
 nMana=[1,1,1,1,1]
@@ -13,6 +13,7 @@ nMana=[1,1,1,1,1]
 whoseTurn=[0]
 
 def playerTurn():
+    print('\nPLAYER\'s TURN\n')
     z=input('Attack or use spell? (a/s): ')
     whoseTurn.pop(0)
     whoseTurn.append(1)
@@ -24,6 +25,7 @@ def playerTurn():
         print('Skipping turn... ')
 
 def npcTurn():
+    print('\n NPC\'s TURN\n')
     whoseTurn.pop(0)
     whoseTurn.append(0)
     attack()
@@ -41,11 +43,34 @@ def checkScore():
         print('Next turn! ')
     
 def attack():
+    n=random.randint(1,3)
     if 1 in whoseTurn:
-        nHealth.pop(0)
+        for i in range(0,n):
+            nHealth.pop(0)
+            if len(nHealth)==0:
+                break
+            else:
+                continue
+        if n==1:
+            print('Regular attack' )
+        elif n==2:
+            print('Lucky strike!' )
+        elif n==3:
+            print('CRITICAL ATTACK! ')
         print('Attacked enemy! \n')
     elif 0 in whoseTurn:
-        pHealth.pop(0)
+        for i in range(0,n):
+            pHealth.pop(0)
+            if len(pHealth)==0:
+                break
+            else:
+                continue
+        if n==1:
+            print('Regular attack' )
+        elif n==2:
+            print('Lucky strike!' )
+        elif n==3:
+            print('CRITICAL ATTACK! ')
         print('Attacked player! \n')
 
 def spell():
@@ -53,6 +78,7 @@ def spell():
 
 def main():
     while True:
+        print('\n\n\n\n\n\n')
         playerTurn()
         checkScore()
         npcTurn()
