@@ -67,8 +67,8 @@ def attack():
                 break
             else:
                 continue
-        attackMsg()
         print('Attacked enemy! \n')
+        attackMsg()
     elif 0 in whoseTurn:
         for i in range(0,n):
             pHealth.pop(0)
@@ -76,8 +76,8 @@ def attack():
                 break
             else:
                 continue
-        attackMsg()
         print('Attacked player! \n')
+        attackMsg()
 
 def spell():
     nHealth.pop(0)
