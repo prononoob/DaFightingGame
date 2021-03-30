@@ -20,6 +20,7 @@ whoseTurn=[0]
 def playerTurn():
     print('\nPLAYER\'s TURN\n')
     z=input('Attack or use spell? (a/s): ')
+    print(' ')
     whoseTurn.pop(0)
     whoseTurn.append(1)
     if z.lower()=='a':
@@ -47,8 +48,17 @@ def checkScore():
         print('[','#'*len(pHealth),' '*(20-len(pHealth)),']',' '*10,'[','#'*len(nHealth),' '*(20-len(nHealth)),']',' '*10,)
         print('Player\'s Health: ',len(pHealth),' '*20,'NPC\'s Health: ',len(nHealth))
         print('\nNext turn! ')
-    
+
 def attack():
+
+    def attackMsg():
+        if n==1:
+            print('Regular attack\n' )
+        elif n==2:
+            print('Lucky strike!\n' )
+        elif n==3:
+            print('CRITICAL ATTACK! \n')
+
     n=random.randint(1,3)
     if 1 in whoseTurn:
         for i in range(0,n):
@@ -57,12 +67,7 @@ def attack():
                 break
             else:
                 continue
-        if n==1:
-            print('Regular attack' )
-        elif n==2:
-            print('Lucky strike!' )
-        elif n==3:
-            print('CRITICAL ATTACK! ')
+        attackMsg()
         print('Attacked enemy! \n')
     elif 0 in whoseTurn:
         for i in range(0,n):
@@ -71,12 +76,7 @@ def attack():
                 break
             else:
                 continue
-        if n==1:
-            print('Regular attack' )
-        elif n==2:
-            print('Lucky strike!' )
-        elif n==3:
-            print('CRITICAL ATTACK! ')
+        attackMsg()
         print('Attacked player! \n')
 
 def spell():
